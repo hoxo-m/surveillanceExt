@@ -600,10 +600,10 @@ algo.farrington.threshold.noufaily <- function(predFit,predSeFit,phi,
   } else{
     # Two cases depending on phi value
     if (phi>1){
-      lu<-c(qnbinom(alpha/2,mu0Quantile/(phi-1),1/phi),
-            qnbinom(1-alpha/2,mu0Quantile/(phi-1),1/phi))
+      lu<-c(qnbinom(alpha,mu0Quantile/(phi-1),1/phi),
+            qnbinom(1-alpha,mu0Quantile/(phi-1),1/phi))
     } else {
-      lu<-c(qpois(alpha/2,mu0Quantile),qpois(1-alpha/2,mu0Quantile))
+      lu<-c(qpois(alpha,mu0Quantile),qpois(1-alpha,mu0Quantile))
     }
     # cannot be negative
     lu[1]=max(0,lu[1])
